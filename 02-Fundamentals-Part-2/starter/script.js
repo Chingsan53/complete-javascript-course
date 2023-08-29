@@ -1,4 +1,153 @@
 /*
+================================================
+'use strict';
+
+let hasDriverLicense = false;
+const passTest = true;
+
+if (passTest) hasDriverLicense = true;
+if (hasDriverLicense) console.log('I can drive');
+
+const interface = 'Audio';
+================================================
+*/
+
+
+
+/*
+================================================
+
+//Function
+
+function logger() {
+    console.log('My name is Ching');
+}
+
+//Calling / running / invoking function
+//logger();
+//logger();
+//logger();
+
+function fruitProcessor(apples, oranges) {
+    console.log(apples, oranges);
+    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+    return juice;
+}
+
+//fruitProcessor(5, 0);
+let appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+//console.log(fruitProcessor(5, 0));
+
+================================================
+*/
+
+
+/*
+================================================
+
+// TOPIC: Function declaration
+
+const now = 2023;
+function calcAge1(birthYear) {
+    return age = `My age is ${now - birthYear} years old`;
+}
+const age1 = calcAge1(1998);
+console.log(calcAge1(1998));
+console.log(age1);
+
+
+//function expression
+const calcAge2 = function (birthYear) {
+    return age = `My age is ${now - birthYear} years old`;
+}
+
+const age2 = calcAge2(1998);
+console.log(age1, age2);
+
+================================================
+*/
+
+/*
+================================================
+
+// TOPIC: Arrow Function
+let now = 2023;
+//let birthYear = 1998;
+const calcAge2 = function (birthYear) {
+    return now - birthYear;
+}
+
+const calcAge3 = birthYear => now - birthYear;
+
+console.log(calcAge3(1998));
+
+// Arrow function with more calculation
+const yearsUntilRetirement = birthYear => {
+    const age = 2023 - birthYear;
+    const retirement = 70 - age;
+    return retirement;
+}
+
+console.log(yearsUntilRetirement(1998));
+
+// Arrow function with multiple parameter (2 param)
+const yearsUntilRetirement2 = (birthYear, firstName) => {
+    const age = 2023 - birthYear;
+    const retirement = 70 - age;
+    return `${firstName} has ${retirement} more years to retire.`;
+}
+
+console.log(yearsUntilRetirement2(1998, 'Chingsan'));
+
+================================================
+*/
+
+/*
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`;
+    return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+*/
+
+/*
+const now = 2023
+
+// Function to cal calcAge
+const calcAge = function (birthYear) {
+    return now - birthYear;
+}
+
+// Function to cal calcRetirement
+const calcRetirement = function (age) {
+    return 70 - age;
+}
+
+// Main function
+const yearsUntilRetirement2 = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    //const age = 2023 - birthYear;
+    const retirement = calcRetirement(age);
+    //const retirement = 70 - age;
+
+    return `${firstName} has ${retirement} more years to retire.`;
+}
+
+console.log(yearsUntilRetirement2(1998, 'Ching'));
+
+*/
+
+
+/*
 //Challenge solution
 
 const calcAverage = (a, b, c) => (a + b + c) / 3;
