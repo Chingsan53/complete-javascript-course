@@ -281,5 +281,5 @@ const jonas = {
     friends: ['Michael', 'Peter', 'Steven']
 };
 
-console.log(typeof jonasArray);
-console.log(typeof jonas);
+console.log(jonas);
+console.log(jonasArray);
