@@ -265,6 +265,7 @@ while (i <= bills.length - 1) {
 }
 */
 
+/*
 const jonasArray = [
     'Jonas',
     'Schmedtmann',
@@ -283,3 +284,48 @@ const jonas = {
 
 console.log(jonas);
 console.log(jonasArray);
+
+console.log(jonas['lastName']);
+
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+console.log(jonas.lastName);
+
+const interestedIn = prompt('What do you want to know about me?');
+console.log(jonas[interestedIn]);
+
+if (jonas[interestedIn])
+    console.log(jonas[interestedIn]);
+else
+    console.log('Wrong Request!');
+
+jonas.location = 'Cambodia';
+jonas['Facebook'] = 'ChingsanLy';
+console.log(jonas);
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}.`)
+
+*/
+
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+    calcAge: function () {
+        return 2037 - this.birthYear;
+    }
+};
+
+console.log(jonas.calcAge());
+//console.log(jonas['calcAge'](1991));
