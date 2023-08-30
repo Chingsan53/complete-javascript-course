@@ -229,7 +229,7 @@ friends.unshift('John');
 console.log(friends);
 
 // Remove elements
-friends.pop(); // Last 
+friends.pop(); // Last
 console.log(friends);
 
 friends.shift(); // First
@@ -310,6 +310,8 @@ console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his bes
 */
 
 
+
+/*
 const jonas = {
     firstName: 'Jonas',
     lastName: 'Schmedtmann',
@@ -322,10 +324,37 @@ const jonas = {
     // calcAge: function (birthYear) {
     //     return 2037 - birthYear;
     // }
+
+    // calcAge: function () {
+    //     return 2037 - this.birthYear;
+    // }
+
     calcAge: function () {
-        return 2037 - this.birthYear;
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${jonas.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
     }
+
 };
 
 console.log(jonas.calcAge());
 //console.log(jonas['calcAge'](1991));
+
+// "Jonas is a 46-year old teacher, and he has a driver's license"
+
+console.log(jonas.getSummary());
+*/
+
+//For Loop
+for (let i = 1; i <= 12; i++)
+    console.log(`Lifting weights repetition ${i} 🏋️‍♀️`);
+
+//While Loop
+let i = 1;
+while (i <= 10) {
+    console.log(`Chest exercise repetition ${i} 🏋️‍♀️`);
+    i++;
+}
