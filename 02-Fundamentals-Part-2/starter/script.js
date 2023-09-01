@@ -393,3 +393,37 @@ hummus(2);
 hummus(1);
 
 */
+
+/*
+const jonasArray = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = [];
+
+for (let i = 0; i <= jonasArray.length - 1; i++) {
+    console.log(jonasArray[i], typeof jonasArray[i]);
+
+    types.push(typeof jonasArray[i]);
+}
+console.log(types);
+
+
+//Loop and add element to the array
+const years = [1991, 2007, 1960, 2020, 1998];
+const ages = [];
+
+for (let i = 0; i < years.length; i++)
+    ages.push(2023 - years[i]);
+
+console.log(ages);
+
+*/
+
+
+//Nested Loop and array backward
