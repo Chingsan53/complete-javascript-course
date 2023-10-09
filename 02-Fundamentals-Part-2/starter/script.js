@@ -425,5 +425,26 @@ console.log(ages);
 
 */
 
-
+/*
 //Nested Loop and array backward
+
+const jonasArray = [
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+for (let i = jonasArray.length - 1; i >= 0; i--)
+    console.log(i, jonasArray[i]);
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+//console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+}
+*/
