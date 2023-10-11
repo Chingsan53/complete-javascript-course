@@ -25,9 +25,9 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (!guess) {
     document.querySelector('.message').textContent = '🛑 No Number';
-    document.querySelector('.label-score').textContent = '🤬 Fuck you';
-    document.querySelector('.label-highscore').textContent =
-      '👿 You are an idiot. ';
+    //document.querySelector('.label-score').textContent = '🤬 Fuck you';
+    //document.querySelector('.label-highscore').textContent =
+    ('👿 You are an idiot. ');
   } else if (guess) {
     if (guess === x) {
       document.querySelector('.message').textContent = '🎉 Correct Number';
