@@ -11,6 +11,7 @@
 // console.log(jonas.calcAge());
 
 /* --------- This keyword --------- */
+/*
 console.log(this);
 
 const calcAge = function (birthYear) {
@@ -43,3 +44,26 @@ matilda.calcAge();
 
 const f = jonas.calcAge;
 f();
+
+*/
+
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    //console.log(this);
+    console.log(2037 - this.year);
+
+    const self = this; //Self or that
+    const isMillenial = function () {
+      console.log(self);
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+
+jonas.greet();
+jonas.calcAge();
