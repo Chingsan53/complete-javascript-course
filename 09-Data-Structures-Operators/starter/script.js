@@ -16,6 +16,10 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function (obj) {
+    console.log(obj);
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -57,3 +61,40 @@ console.log(main, secondary);
 
 const [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse);
+
+// Nested destructuring
+const nested = [2, 4, [5, 6]];
+//const [i, , j] = nested;
+//console.log(i, j);
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+// Default values 
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
+console.info('------- break point --------');
+
+//Destructor Object
+console.info('Descructor object');
+
+const { name, openingHours, categories } = restaurant;
+console.table(name, openingHours, categories);
+
+const { name: restaurantName, openingHours: hours, categories: tags } = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let d = 111;
+let e = 999;
+const obj = { d: 23, e: 7, c: 14 };
+({ d, e } = obj);
+console.log(a, b);
+
+// nested objects
+const { fri: { open: o, close: c },
+} = openningHours;
+console.log(o, c);
