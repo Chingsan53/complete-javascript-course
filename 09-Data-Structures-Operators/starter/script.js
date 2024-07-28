@@ -16,8 +16,15 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function (obj) {
-    console.log(obj);
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
   },
 
   openingHours: {
@@ -36,40 +43,58 @@ const restaurant = {
   },
 };
 
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via Sel Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via Sel Sole, 21',
+
+  starterIndex: 2,
+});
+
 //Example
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-const [x, y, z] = arr;
-console.log(x, y, z);
-console.log(arr);
+// Array Destructuring
+// const [x, y, z] = arr;
+// console.log(x, y, z);
+// console.log(arr);
 
-let [main, , secondary] = restaurant.categories;
-console.log('1st');
-console.log(main, secondary);
+// let [main, , secondary] = restaurant.categories;
+// console.log('1st');
+// console.log(main, secondary);
 
+//Switch the 2nd to 1st 1st to 2nd
 // const temp = main;
 // main = secondary;
 // secondary = temp;
 // console.log(main, secondary);
 
-console.log('2st');
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
+// A lot easier method
+// switching variable
+// console.log('2st');
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
 
+// Receive 2 return values from a function
 const [starter, mainCourse] = restaurant.order(2, 0);
 console.log(starter, mainCourse);
 
 // Nested destructuring
 const nested = [2, 4, [5, 6]];
-//const [i, , j] = nested;
-//console.log(i, j);
+// const [i, , j] = nested;
+// console.log(i, j);
 const [i, , [j, k]] = nested;
 console.log(i, j, k);
 
-// Default values 
+// Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 console.info('------- break point --------');
@@ -80,7 +105,11 @@ console.info('Descructor object');
 const { name, openingHours, categories } = restaurant;
 console.table(name, openingHours, categories);
 
-const { name: restaurantName, openingHours: hours, categories: tags } = restaurant;
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
 console.log(restaurantName, hours, tags);
 
 // Default values
@@ -88,13 +117,14 @@ const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
 
 // Mutating variables
-let d = 111;
-let e = 999;
-const obj = { d: 23, e: 7, c: 14 };
-({ d, e } = obj);
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
 console.log(a, b);
 
 // nested objects
-const { fri: { open: o, close: c },
-} = openningHours;
+const {
+  fri: { open: o, close: c },
+} = openingHours;
 console.log(o, c);
