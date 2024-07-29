@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -236,6 +238,40 @@ addStr('Hello', 'World')
 restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushroom')
 
+console.log('------- OR --------')
 //Short Circuiting
 // Use ANY data type, return ANY data type, Short-circuiting
 console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+console.log(undefined || 0 || '' || 23 || 'Hello' || null);
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10
+console.log(guests2)
+
+// Nullish value:
+// null and undefined (NOT 0 or '')
+console.log('------- Nullish -------')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect)
+
+console.log('------- AND --------')
+console.log(0 && 'Jonas')
+console.log(7 && 'Jonas')
+console.log(8 && 'Ching' && 7)
+
+console.log('Hello' && 23 && null && 'jonas');
+
+// Practical Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'spinach')
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach')
