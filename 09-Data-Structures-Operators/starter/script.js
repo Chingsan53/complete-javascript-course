@@ -309,3 +309,20 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1)
 console.log(rest2)
+
+console.log('------- break point -------')
+// Loop of
+const loopMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of loopMenu)
+  console.log(item)
+
+// for (const item of loopMenu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`)
+// }
+
+for (const [i, el] of loopMenu.entries()) {
+  console.log(`${i + 1}: ${el}`)
+}
+
+// console.log([...loopMenu.entries()])
