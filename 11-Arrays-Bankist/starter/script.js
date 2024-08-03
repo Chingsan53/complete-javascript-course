@@ -261,6 +261,32 @@ calcDisplayBalance(account1.movements);
 calcDisplayBalance(account2.movements);
 calcDisplayBalance(account3.movements);
 
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}`;
+  console.log(incomes);
+
+  const out = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${out}`;
+  console.log(out);
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      // console.log(arr);
+      return int >= 1;
+    })
+    .reduce((acc, int) => acc + int, 0);
+  console.log(interest);
+};
+
+calcDisplaySummary(account1.movements);
+
 // Maximum value
 const max = movements.reduce((acc, mov) => {
   if (acc > mov) return acc;
@@ -275,3 +301,39 @@ const min = movements.reduce((acc, mov) => {
 });
 
 console.log(`The minimum deposit value: ${min}`);
+
+const totalDeopositsUSD = movements
+  .filter(mov => mov > 0)
+  // .map((mov, i, arr) => mov * euroToUsd)
+  .map((mov, i, arr) => {
+    // console.log(arr);
+    return mov * euroToUsd;
+  })
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDeopositsUSD);
+
+// Coding Challenge #3
+console.log('-------- Coding Challenge 3');
+
+//Rewrite the 'calcAverageHumanAge' function from the pervious challenge, but this time as an arrow function, and using chaining
+
+//Test Data 1: [5, 2, 4, 1, 15, 8, 3];
+//Test Data 2: [16, 6, 10, 5, 6, 1, 4];
+/*
+const calcAverageHumanAge = function (humanAge) {
+  const age = humanAge.map(a => (a + a) / a.length).reduce((h, a) => h + a, 0);
+  console.log(age);
+};
+const human1 = [5, 2, 4, 1, 15, 8, 3];
+calcAverageHumanAge(human1);
+*/
+
+// Find Method
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(firstWithdrawal);
+const firstDeposit = movements.find(mov => mov > 0);
+console.log(firstDeposit);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
