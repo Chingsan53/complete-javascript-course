@@ -214,6 +214,10 @@ const createUsername = function (accs) {
 createUsername(accounts);
 console.log(accounts);
 
+let currentAccount;
+currentAccount = accounts.find(acc => acc.owner === inputLoginUsername.value);
+console.log(currentAccount);
+
 // Filter
 const deposits = movements.filter(function (mov) {
   return mov > 0;
@@ -337,3 +341,42 @@ console.log(firstDeposit);
 
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
+
+// findIndex Method
+// if (
+//   inputCloseUsername.value === currentAccount.username &&
+//   Number(inputClosePin.value) === currentAccount.pin
+// ) {
+//   accounts.splice(index, 1);
+// }
+
+// Eqaulity
+console.log(movements);
+console.log(movements.includes(-130));
+
+// SOME: CONDITION
+console.log(movements.some(mov => mov === -130));
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
+
+// EVERY
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+// Separate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
+
+// flatMap and flat
+const arr4 = [[1, 2, 3], [4, [5, 6]], 7, 8];
+console.log(arr4.flat());
+
+const arrDeep = [
+  [[1, 2], 3],
+  [4, [5, 6], 7, 8],
+];
+
+console.log(arrDeep);
+console.log(arrDeep.flat(2));
