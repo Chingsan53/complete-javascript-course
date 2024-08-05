@@ -380,3 +380,84 @@ const arrDeep = [
 
 console.log(arrDeep);
 console.log(arrDeep.flat(2));
+
+const accountMovements = accounts.map(acc => acc.movements);
+console.log(accountMovements);
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+// const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+// flat
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+// flatMap
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance2);
+
+// Sorting Method
+
+const owners = ['Jonas', 'Ching', 'Martha'];
+console.log(owners.sort());
+console.log(owners);
+
+// Numbers
+console.log(movements);
+console.log(movements.sort());
+
+// Ascending
+// return < 0, a, b (keep order)
+// return >0, B, A (switch order)
+/*
+movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});
+console.log(movements);
+*/
+
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+// Descending
+/*
+movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (b > a) return 1;
+});
+console.log(movements);
+*/
+
+movements.sort((a, b) => b - a);
+console.log(movements);
+
+// More way of create an array or filling
+const x = new Array(7);
+console.log(x);
+x.map(() => 5);
+console.log(x);
+
+// x.fill(1);
+x.fill(1, 3, 5);
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+// Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+console.log(movementsUI);
+
+// 23 Array methods
